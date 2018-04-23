@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataConnections>
+    <DataConnection Name="nwindConnection" ProviderKey="Access97">
+      <Parameters>
+        <Parameter Name="database" Value="..\..\Data\nwind.mdb" />
+        <Parameter Name="read only" Value="1" />
+        <Parameter Name="generateConnectionHelper" Value="false" />
+      </Parameters>
+    </DataConnection>
+  </DataConnections>
+  <DataSources>
+    <DataSource ComponentName="dataSource1" Name="Data Source 1">
+      <DataProvider DataConnection="nwindConnection">
+        <Selection>
+          <Table Name="SalesPerson">
+            <Columns>
+              <Column Name="OrderID" />
+              <Column Name="Country" />
+              <Column Name="FirstName" />
+              <Column Name="LastName" />
+              <Column Name="ProductName" />
+              <Column Name="CategoryName" />
+              <Column Name="OrderDate" />
+              <Column Name="UnitPrice" />
+              <Column Name="Quantity" />
+              <Column Name="Discount" />
+              <Column Name="Extended Price" />
+              <Column Name="Sales Person" />
+            </Columns>
+          </Table>
+        </Selection>
+      </DataProvider>
+    </DataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Chart 1" DataSource="dataSource1">
+      <DataItems>
+        <Measure DataMember="Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="Country" UniqueName="DataItem1" />
+        <Dimension DataMember="CategoryName" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pie ComponentName="pieDashboardItem1" Name="Pies 1" DataSource="dataSource1">
+      <DataItems>
+        <Measure DataMember="Extended Price" UniqueName="DataItem0" />
+        <Dimension DataMember="Country" UniqueName="DataItem1" />
+        <Dimension DataMember="CategoryName" TopNEnabled="true" TopNCount="3" TopNMeasure="DataItem0" UniqueName="DataItem2" />
+        <Measure DataMember="Quantity" UniqueName="DataItem3" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+        <Value UniqueName="DataItem3" />
+      </Values>
+    </Pie>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="pieDashboardItem1" Weight="39.252336448598129" />
+      <LayoutItem DashboardItem="chartDashboardItem1" Weight="60.747663551401871" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
