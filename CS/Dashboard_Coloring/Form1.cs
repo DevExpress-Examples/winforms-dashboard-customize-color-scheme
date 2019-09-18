@@ -9,13 +9,13 @@ namespace Dashboard_Coloring {
             InitializeComponent();
             dashboardDesigner1.CreateRibbon();
 
-            // Creates a color table containing dimension values, measures and corresponding colors.
+            // Create a color table that contains dimension values, measures and colors.
             DataTable colorTable = CreateColorTable();
-            // Loads a dashboard from the XML file.
+            // Load a dashboard from the XML file.
             Dashboard dashboard = new Dashboard(); dashboard.LoadFromXml(@"..\..\Data\Dashboard.xml");
             IDashboardDataSource dataSource = dashboard.DataSources["dataSource1"];
 
-            // Specifies the coloring mode for the specified pie series, pie measures and chart argument.
+            // Specify the coloring mode for the pie series, pie measures and chart argument.
             PieDashboardItem pie1 = (PieDashboardItem)dashboard.Items["pieDashboardItem1"];
             ChartDashboardItem chart1 = (ChartDashboardItem)dashboard.Items["chartDashboardItem1"];
             pie1.SeriesDimensions[0].ColoringMode = ColoringMode.Hue;
@@ -29,7 +29,7 @@ namespace Dashboard_Coloring {
             dashboardDesigner1.Dashboard = dashboard;
         }
 
-        // Creates color scheme entries used to map dimension values, measures and colors.
+        // Create color scheme entries to map dimension values, measures and colors.
         private ColorSchemeEntry CreateColorSchemeEntry(DataRow colorSchemeRecord, 
                                                         IDashboardDataSource dataSource, 
                                                         bool includeMeasures) {
