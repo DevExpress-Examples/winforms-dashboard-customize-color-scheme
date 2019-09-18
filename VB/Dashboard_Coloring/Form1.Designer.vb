@@ -32,9 +32,6 @@
 			Me.dashboardDesigner1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.dashboardDesigner1.Location = New System.Drawing.Point(0, 0)
 			Me.dashboardDesigner1.Name = "dashboardDesigner1"
-			Me.dashboardDesigner1.PrintingOptions.DocumentContentOptions.FilterState = DevExpress.DashboardWin.DashboardPrintingFilterState.SeparatePage
-			Me.dashboardDesigner1.PrintingOptions.FontInfo.GdiCharSet = (CByte(0))
-			Me.dashboardDesigner1.PrintingOptions.FontInfo.Name = Nothing
 			Me.dashboardDesigner1.Size = New System.Drawing.Size(1104, 601)
 			Me.dashboardDesigner1.TabIndex = 0
 			' 

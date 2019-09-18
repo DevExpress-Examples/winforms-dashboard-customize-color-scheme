@@ -32,9 +32,6 @@
             this.dashboardDesigner1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardDesigner1.Location = new System.Drawing.Point(0, 0);
             this.dashboardDesigner1.Name = "dashboardDesigner1";
-            this.dashboardDesigner1.PrintingOptions.DocumentContentOptions.FilterState = DevExpress.DashboardWin.DashboardPrintingFilterState.SeparatePage;
-            this.dashboardDesigner1.PrintingOptions.FontInfo.GdiCharSet = ((byte)(0));
-            this.dashboardDesigner1.PrintingOptions.FontInfo.Name = null;
             this.dashboardDesigner1.Size = new System.Drawing.Size(1104, 601);
             this.dashboardDesigner1.TabIndex = 0;
             // 
