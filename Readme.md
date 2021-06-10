@@ -13,3 +13,8 @@ The dashboard contains a [Pie](http://docs.devexpress.com/Dashboard/15262) and
 The [Dashboard.ColorScheme](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.Dashboard.ColorScheme) property provides access to a color scheme that contains [ColorSchemeEntry](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.ColorSchemeEntry) objects. New **ColorSchemeEntry** objects are created and added to the scheme.
 
 ![screenshot](/images/screenshot.png)
+
+## Documentation
+
+- [Customizing a Color Scheme](https://docs.devexpress.com/Dashboard/17865)
+- [Coloring](https://docs.devexpress.com/Dashboard/17868)
