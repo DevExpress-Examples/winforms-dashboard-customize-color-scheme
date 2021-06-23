@@ -3,7 +3,7 @@
 
 * [Form1.cs](./CS/Dashboard_Coloring/Form1.cs) (VB: [Form1.vb](./VB/Dashboard_Coloring/Form1.vb))
 <!-- default file list end -->
-# How to Customize a Dashboard Color Scheme
+# Dashboard for WinForms - How to Customize a Dashboard Color Scheme
 
 
 This example demonstrates how to customize a dashboard color scheme to change colors for the specified dimension values.
