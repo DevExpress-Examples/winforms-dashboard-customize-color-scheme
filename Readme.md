@@ -24,7 +24,7 @@ The [Dashboard.ColorScheme](https://docs.devexpress.com/Dashboard/DevExpress.Das
 - [Customizing a Color Scheme](https://docs.devexpress.com/Dashboard/17865)
 - [Coloring](https://docs.devexpress.com/Dashboard/17868)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-dashboard-customize-color-scheme&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-dashboard-customize-color-scheme&~~~was_helpful=no)
 
