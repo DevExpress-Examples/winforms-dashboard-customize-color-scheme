@@ -5,15 +5,15 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# Dashboard for WinForms - How to Customize a Dashboard Color Scheme
+# BI Dashboard for WinForms - Customize a Dashboard Color Scheme
 
-This example demonstrates how to customize a dashboard color scheme to change colors for the specified dimension values.
+This example customizes a dashboard color scheme to change colors and styles for the specified dimension values.
 
-The dashboard contains a [Pie](http://docs.devexpress.com/Dashboard/15262) and [Chart](http://docs.devexpress.com/Dashboard/14719) dashboard items whose dimension values and measures are colored by hue. 
+The dashboard contains a [Pie](http://docs.devexpress.com/Dashboard/15262) and [Chart](http://docs.devexpress.com/Dashboard/14719) dashboard items. Their dimension values and measures are colored by hue. 
 
-The [Dashboard.ColorScheme](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.Dashboard.ColorScheme) property provides access to a color scheme that contains [ColorSchemeEntry](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.ColorSchemeEntry) objects. New **ColorSchemeEntry** objects are created and added to the scheme.
+The [Dashboard.ColorScheme](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.Dashboard.ColorScheme) property provides access to a color scheme that contains [ColorSchemeEntry](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.ColorSchemeEntry) objects. New `ColorSchemeEntry` objects are created and added to the scheme.
 
-![screenshot](/images/screenshot.png)
+![WinForms Dashboard - Customized Color Scheme](/images/screenshot.png)
 
 ## Files to Review
 

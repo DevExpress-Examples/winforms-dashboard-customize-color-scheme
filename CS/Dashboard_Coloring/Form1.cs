@@ -1,7 +1,8 @@
-﻿using System.Data;
-using System.Drawing;
+﻿using DevExpress.DashboardCommon;
+using DevExpress.Drawing;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.DashboardCommon;
+using System.Data;
+using System.Drawing;
 
 namespace Dashboard_Coloring {
     public partial class Form1 : RibbonForm {
@@ -30,21 +31,25 @@ namespace Dashboard_Coloring {
         }
 
         // Create color scheme entries to map dimension values, measures and colors.
-        private ColorSchemeEntry CreateColorSchemeEntry(DataRow colorSchemeRecord, 
-                                                        IDashboardDataSource dataSource, 
+        private ColorSchemeEntry CreateColorSchemeEntry(DataRow colorSchemeRecord,
+                                                        IDashboardDataSource dataSource,
                                                         bool includeMeasures) {
             DimensionDefinition categoryDefinition = new DimensionDefinition("CategoryName");
             DimensionDefinition countryDefinition = new DimensionDefinition("Country");
             MeasureDefinition priceDefinition = new MeasureDefinition("Extended Price");
 
             ColorSchemeEntry entry = new ColorSchemeEntry();
-            entry.DimensionKeys.Add(new ColorSchemeDimensionKey(categoryDefinition, 
+            entry.DimensionKeys.Add(new ColorSchemeDimensionKey(categoryDefinition,
                 colorSchemeRecord["CategoryName"]));
-            entry.DimensionKeys.Add(new ColorSchemeDimensionKey(countryDefinition, 
+            entry.DimensionKeys.Add(new ColorSchemeDimensionKey(countryDefinition,
                 colorSchemeRecord["Country"]));
-            if(includeMeasures)
+            if (includeMeasures)
                 entry.MeasureKey = new ColorSchemeMeasureKey(priceDefinition);
-            entry.ColorDefinition = new ColorDefinition((Color)colorSchemeRecord["color"]);
+            // Use a DashboardPaletteItem to define the color, a fill style (hatch), and line style.
+            entry.ColorDefinition = new ColorDefinition(new DashboardPaletteItem(
+                (Color)colorSchemeRecord["color"],
+                (DXHatchStyle)colorSchemeRecord["hatch"],
+                (DXDashStyle)colorSchemeRecord["line"]));
             entry.DataSource = dataSource;
             return entry;
         }
@@ -55,8 +60,10 @@ namespace Dashboard_Coloring {
             colorTable.Columns.Add("Country", typeof(string));
             colorTable.Columns.Add("measure", typeof(string));
             colorTable.Columns.Add("color", typeof(Color));
-            colorTable.Rows.Add("Beverages", "UK", "Extended Price", Color.Red);
-            colorTable.Rows.Add("Beverages", "USA", "Extended Price", Color.Green);
+            colorTable.Columns.Add("hatch", typeof(DXHatchStyle));
+            colorTable.Columns.Add("line", typeof(DXDashStyle));
+            colorTable.Rows.Add("Beverages", "UK", "Extended Price", Color.Red, DXHatchStyle.DiagonalCross, DXDashStyle.Dash);
+            colorTable.Rows.Add("Beverages", "USA", "Extended Price", Color.Green, DXHatchStyle.Sphere, DXDashStyle.Dot);
             return colorTable;
         }
     }

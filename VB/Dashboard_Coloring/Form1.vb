@@ -1,7 +1,8 @@
 ﻿Imports System.Data
 Imports System.Drawing
-Imports DevExpress.XtraBars.Ribbon
 Imports DevExpress.DashboardCommon
+Imports DevExpress.Drawing
+Imports DevExpress.XtraBars.Ribbon
 
 Namespace Dashboard_Coloring
 	Partial Public Class Form1
@@ -10,7 +11,6 @@ Namespace Dashboard_Coloring
 		Public Sub New()
 			InitializeComponent()
 			dashboardDesigner1.CreateRibbon()
-
 			' Create a color table that contains dimension values, measures and colors.
 			Dim colorTable As DataTable = CreateColorTable()
 			' Load a dashboard from the XML file.
@@ -44,7 +44,8 @@ Namespace Dashboard_Coloring
 			If includeMeasures Then
 				entry.MeasureKey = New ColorSchemeMeasureKey(priceDefinition)
 			End If
-			entry.ColorDefinition = New ColorDefinition(DirectCast(colorSchemeRecord("color"), Color))
+			' Use a DashboardPaletteItem to define the color, a fill style (hatch), and line style.
+			entry.ColorDefinition = New ColorDefinition(New DashboardPaletteItem(DirectCast(colorSchemeRecord("color"), Color), DirectCast(colorSchemeRecord("hatch"), DXHatchStyle), DirectCast(colorSchemeRecord("line"), DXDashStyle)))
 			entry.DataSource = dataSource
 			Return entry
 		End Function
@@ -55,8 +56,10 @@ Namespace Dashboard_Coloring
 			colorTable.Columns.Add("Country", GetType(String))
 			colorTable.Columns.Add("measure", GetType(String))
 			colorTable.Columns.Add("color", GetType(Color))
-			colorTable.Rows.Add("Beverages", "UK", "Extended Price", Color.Red)
-			colorTable.Rows.Add("Beverages", "USA", "Extended Price", Color.Green)
+			colorTable.Columns.Add("hatch", GetType(DXHatchStyle))
+			colorTable.Columns.Add("line", GetType(DXDashStyle))
+			colorTable.Rows.Add("Beverages", "UK", "Extended Price", Color.Red, DXHatchStyle.DiagonalCross, DXDashStyle.Dash)
+			colorTable.Rows.Add("Beverages", "USA", "Extended Price", Color.Green, DXHatchStyle.Sphere, DXDashStyle.Dot)
 			Return colorTable
 		End Function
 	End Class
